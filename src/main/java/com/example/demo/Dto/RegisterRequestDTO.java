@@ -9,6 +9,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthResponceDTO {
-    private String token;
+public class RegisterRequestDTO {
+
+    private String email;
+    private String password;
+    private String phone;
 }
