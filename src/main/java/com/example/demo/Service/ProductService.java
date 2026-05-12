@@ -25,7 +25,6 @@ public class ProductService {
         p.setDescription(request.getDescription());
         p.setImageUrl(request.getImageUrl());
         p.setStock(request.getStock());
-
         return productRepository.save(p);
     }
 

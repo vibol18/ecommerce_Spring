@@ -4,10 +4,8 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
-import org.springframework.boot.security.autoconfigure.SecurityProperties.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.stringtemplate.v4.compiler.CodeGenerator.primary_return;
 
 import com.example.demo.Dto.LoginRequestDTO;
 import com.example.demo.Dto.RegisterRequestDTO;
@@ -22,12 +20,20 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
 
     public String register(RegisterRequestDTO request) {
+
+        if (userRepository.findByEmail(request.getEmail()).isPresent()) {
+            return "Email already exists";
+        }
+
         Users user = new Users();
+        user.setUsername(request.getUsername());
         user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setUsername(request.getPhone());
+        user.setPhone(request.getPhone());
         user.setRole("USER");
+
         userRepository.save(user);
+
         return "Register Success";
     }
 

@@ -11,6 +11,7 @@ import com.example.demo.Service.ProductService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/products")
 @RequiredArgsConstructor
 public class ProductController {

@@ -10,14 +10,14 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/auth")
+@CrossOrigin(origins = "http://localhost:5173")
 @RequiredArgsConstructor
 public class AuthController {
 
     private final AuthService authService;
 
     @PostMapping("/register")
-    public String register(
-            @RequestBody RegisterRequestDTO request) {
+    public String register(@RequestBody RegisterRequestDTO request) {
         return authService.register(request);
     }
 

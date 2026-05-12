@@ -14,6 +14,5 @@ public class RegisterRequestDTO {
     private String username;
     private String email;
     private String password;
-    @Column(nullable = true)
     private String phone;
 }
