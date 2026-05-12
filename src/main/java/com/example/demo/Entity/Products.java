@@ -15,7 +15,6 @@ public class Products {
     private String name;
     private double price;
     private String description;
-
     private String imageUrl;
     private int stock;
 }
