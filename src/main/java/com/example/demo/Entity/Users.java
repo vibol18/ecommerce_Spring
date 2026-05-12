@@ -8,17 +8,19 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Users")
+@Table(name = "users")
 
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String Username;
+    @Column(nullable = false, unique = true)
+    private String username;
     @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false)
     private String password;
     private String role;
-    private int phone;
+    @Column(nullable = true)
+    private String phone;
 }
