@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
-@RequestMapping("/api/auth")
+@RequestMapping("/api/users")
 @RequiredArgsConstructor
 public class UsersController {
 
@@ -24,5 +25,11 @@ public class UsersController {
     public List<Users> getAllUsers() {
 
         return authService.getAllUsers();
+    }
+
+    // get by id
+    @GetMapping("/{id}")
+    public Users getById(@PathVariable Long id) {
+        return authService.getById(id);
     }
 }

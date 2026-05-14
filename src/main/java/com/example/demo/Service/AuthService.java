@@ -50,4 +50,10 @@ public class AuthService {
     public List<Users> getAllUsers() {
         return userRepository.findAll();
     }
+
+    // Get user by ID
+    public Users getById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User Not Found"));
+    }
 }
