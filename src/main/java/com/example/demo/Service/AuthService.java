@@ -8,6 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Dto.LoginRequestDTO;
+import com.example.demo.Dto.LoginresponceDTO;
 import com.example.demo.Dto.RegisterRequestDTO;
 import com.example.demo.Entity.Users;
 import com.example.demo.Repository.UserRepository;
@@ -44,7 +45,7 @@ public class AuthService {
         if (!isPasswordCorrect) {
             throw new RuntimeException("Wrong Password");
         }
-        return ("login Suceess");
+        return "Login Success";
     }
 
     public List<Users> getAllUsers() {
