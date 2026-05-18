@@ -1,3 +1,17 @@
-public class UserMapper {
+package com.example.demo.Mapper;
 
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
+public class UserMapper {
+    @Id
+    
 }
