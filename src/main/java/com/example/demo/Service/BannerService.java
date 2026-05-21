@@ -30,9 +30,8 @@ public class BannerService {
     // update
     public Banner updateBanner(Long id, Banner banner) {
         Banner oldBanner = bannerRepository.findById(id).orElse(null);
-        if (oldBanner == null) {
+        if (oldBanner != null) {
             oldBanner.setTitle(banner.getTitle());
-
             oldBanner.setImageUrl(banner.getImageUrl());
             return bannerRepository.save(oldBanner);
         }

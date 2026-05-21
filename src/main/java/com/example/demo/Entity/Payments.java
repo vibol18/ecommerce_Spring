@@ -3,11 +3,12 @@ package com.example.demo.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Entity
+@Table(name = "payments")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Payments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
