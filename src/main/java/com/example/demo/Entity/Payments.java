@@ -13,5 +13,9 @@ public class Payments {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String bank_name;
+    private String card_number;
+    private String card_holder_name;
+    private String expiry_date;
+    private String cvv;
 
 }

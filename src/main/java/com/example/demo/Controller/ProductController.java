@@ -22,7 +22,6 @@ public class ProductController {
     public Products create(@RequestBody ProductsRequestDTO request) {
         return productService.createProducts(request);
     }
-
     @GetMapping
     public List<Products> getAllProducts() {
         return productService.getAllProducts();
